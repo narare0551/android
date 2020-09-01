@@ -11,6 +11,7 @@ import android.net.Uri;
 
 import java.net.URI;
 
+//실제로는 일일히 쓰는 경우는 많이 없고 다른 사람이 한거에서 가져옴
 public class PersonProvider extends ContentProvider {
     //g현재 제공자
     private static final String AUTHORITY = "com.example.provider";
@@ -83,14 +84,16 @@ public class PersonProvider extends ContentProvider {
     }
 
 
-
     @Override
+    
+    //함수 선언
     public Uri insert(Uri uri, ContentValues values) {
         // TODO: Implement this to handle requests to insert a new row.
         //throw new UnsupportedOperationException("Not yet implemented");
 
         long id = database.insert(DatabaseHelper.TABLE_NAME, null, values);
         //id가 0보다 크면 정상적으로 insert가 된 것이다
+
         if (id > 0) {
             //contentURI 에 id를넣음
             Uri _uri = ContentUris.withAppendedId(CONTENT_URI, id);
@@ -105,6 +108,7 @@ public class PersonProvider extends ContentProvider {
     @Override
     public boolean onCreate() {
         // TODO: Implement this to initialize your content provider on startup.
+        //DB 생성
         DatabaseHelper helper = new DatabaseHelper(getContext());
         database = helper.getWritableDatabase();
         return true;
@@ -132,7 +136,7 @@ public class PersonProvider extends ContentProvider {
                         null,
                         null,
                         null,
-                        DatabaseHelper.PERSON_NAME + "ASC");
+                        DatabaseHelper.PERSON_NAME + " ASC");
                 break;
             default:
                 throw new IllegalArgumentException("알수 없는 URI " + uri);
@@ -146,17 +150,19 @@ public class PersonProvider extends ContentProvider {
 
     //------------ update-----------
     @Override
-    //content value 안에는 set값 (file name, update value)
+    //content value 안에는 set값 (file name, update value) update할 값
     // selection 은 조건
     //조건이 따르면 argument가 들어간다
     public int update(Uri uri, ContentValues values, String selection,
                       String[] selectionArgs) {
         // TODO: Implement this to handle requests to update one or more rows.
         // throw new UnsupportedOperationException("Not yet implemented");
+        //update되는 갯수
         int count = 0;
         switch (uriMatcher.match(uri)) {
             case PERSONS:
-                count = database.update(DatabaseHelper.TABLE_NAME, values, selection, selectionArgs);
+                count = database.update(DatabaseHelper.TABLE_NAME,
+                        values, selection, selectionArgs);
 //               sql =update table명 set 필드명 = 값 where name ="홍길동"
 //                    //고칠게 mobile이면
 //                    values.put("mobile","010-");

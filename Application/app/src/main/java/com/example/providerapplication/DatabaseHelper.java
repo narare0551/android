@@ -11,7 +11,7 @@ import androidx.annotation.Nullable;
 
 
     public class DatabaseHelper extends SQLiteOpenHelper{
-        private static final String DATABASE_NAME="person.db";
+        private static final String DATABASE_NAME="person1.db";
         private static final int DATABASE_VERSION=1;
         public static final String TABLE_NAME ="person";
         public static final String PERSON_ID="_id";
@@ -24,9 +24,10 @@ import androidx.annotation.Nullable;
 
         private static final String CREATE_TABLE=
                 "CREATE TABLE " + TABLE_NAME+"("+
-                        PERSON_ID+"INTEGER PRIMARY KEY AUTOINCREMENT," +
-                        PERSON_NAME+"TEXT,"+
-                        PERSON_AGE+"INTEGER,"+PERSON_MOBILE+"TEXT)";
+                        PERSON_ID+" INTEGER PRIMARY KEY AUTOINCREMENT," +
+                        PERSON_NAME+" TEXT,"+
+                        PERSON_AGE+" INTEGER,"+
+                        PERSON_MOBILE+" TEXT)";
 
         public DatabaseHelper (@Nullable Context context){
 
