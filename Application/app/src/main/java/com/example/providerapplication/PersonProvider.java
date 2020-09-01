@@ -85,7 +85,7 @@ public class PersonProvider extends ContentProvider {
 
 
     @Override
-    
+
     //함수 선언
     public Uri insert(Uri uri, ContentValues values) {
         // TODO: Implement this to handle requests to insert a new row.
