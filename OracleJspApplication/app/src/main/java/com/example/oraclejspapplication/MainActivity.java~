@@ -1,0 +1,98 @@
+package com.example.oraclejspapplication;
+
+import android.os.AsyncTask;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
+
+import androidx.appcompat.app.AppCompatActivity;
+
+import com.example.oarclejspapplication.R;
+
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
+import java.io.OutputStreamWriter;
+import java.net.HttpURLConnection;
+import java.net.MalformedURLException;
+import java.net.URL;
+
+public class MainActivity extends AppCompatActivity {
+    EditText edId,edPw;
+    TextView tv;
+    Button btn;
+
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+        edId=findViewById(R.id.editId);
+        edPw=findViewById(R.id.editPw);
+        tv=findViewById(R.id.textView);
+        btn=findViewById(R.id.button);
+        //데이터를 넘겨주고 싶을때
+        btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String id = edId.getText().toString();
+
+                String pw= edPw.getText().toString();
+                RegisterTask task = new RegisterTask();
+                task.execute(id,pw);
+
+            }
+        });
+
+    }
+
+    class RegisterTask extends AsyncTask<String,String,String> {
+        String sendMsg, receiverMsg;
+
+//넘겨준 데이터를 여기서 받는다.
+        @Override
+        protected String doInBackground(String... strings) {
+            Log.i("AAAAA","kkkkkkk");
+            try{
+                String str="";
+                URL url=new URL("http://192.168.0.31:8090/AndroidConn/insertDB");
+                HttpURLConnection conn=(HttpURLConnection)url.openConnection();
+                conn.setRequestProperty("Content-Type","application/x-www-form-urlencoded");
+                conn.setRequestMethod("POST");
+                OutputStreamWriter osw=new
+                        OutputStreamWriter(conn.getOutputStream(),"UTF-8");
+                sendMsg="id="+strings[0]+"&pw="+strings[1];
+                osw.write(sendMsg);
+                osw.flush();
+                osw.close();
+
+                if(conn.getResponseCode()==conn.HTTP_OK){
+                    InputStreamReader isr=new
+                            InputStreamReader(conn.getInputStream(),"UTF-8");
+                    BufferedReader reader=new BufferedReader(isr);
+                    StringBuffer buffer=new StringBuffer();
+                    while((str=reader.readLine())!=null){
+                        buffer.append(str);
+                    }
+                    receiverMsg=buffer.toString();
+                }
+
+//여러번 할때마다 반복되면 tv 에 뿌려준다
+            }catch (MalformedURLException e){
+                e.printStackTrace();
+            }catch (IOException e){
+                e.printStackTrace();
+            }
+
+            return receiverMsg;
+        }
+
+        @Override
+        protected void onPostExecute(String s) {
+            super.onPostExecute(s);
+            tv.setText(s);
+        }
+    }
+}
