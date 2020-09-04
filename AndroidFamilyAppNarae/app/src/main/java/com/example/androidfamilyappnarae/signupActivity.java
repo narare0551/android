@@ -18,6 +18,7 @@ EditText id, pw, pwconfirm, name, phonenum , bday, nickname, role ,fcode;
         id = findViewById(R.id.idinput);
         pw = findViewById(R.id.pwinput);
         pwconfirm = findViewById(R.id.pwconfirm);
+        name = findViewById(R.id.name);
         phonenum = findViewById(R.id.phonenum);
         bday = findViewById(R.id.birthday);
         nickname = findViewById(R.id.nickname);

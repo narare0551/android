@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,7 +8,7 @@
     android:background="@drawable/backgroundflower"
     android:backgroundTint="#99FFFFFF"
     android:backgroundTintMode="src_over"
-    >
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/textView"
@@ -19,31 +18,32 @@
         android:text="회원가입을 축하합니다"
         android:textColor="#0B0A0A"
         android:textSize="36sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        />
 
-    <Button
-        android:id="@+id/button4"
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="복사하기"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.888"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="227dp" />
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        android:textAlignment="center"
+        android:layout_marginTop="50dp">
 
-    <EditText
-        android:id="@+id/editTextTextPersonName2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        app:layout_constraintEnd_toStartOf="@+id/button4"
-        app:layout_constraintHorizontal_bias="0.54"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="227dp" />
+        <EditText
+            android:id="@+id/editTextTextPersonName2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:text="Name" />
+
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="복사하기" />
+    </LinearLayout>
 
     <TextView
         android:id="@+id/textView4"
@@ -52,10 +52,9 @@
         android:text="다른가족에게 코드를 알려주세요"
         android:textColor="#0B0A0A"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.494"
-        app:layout_constraintStart_toStartOf="parent"
-        tools:layout_editor_absoluteY="148dp" />
+        android:textAlignment="center"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"/>
 
     <TextView
         android:id="@+id/textView8"
@@ -65,7 +64,8 @@
 엄마아빠를 알고 싶어 만든 책 \n\n 매일 천천히 \n 질문들에 답해 보는 거에요 \n\n 그간 나누지 못했던  \n 진솔한 이야기들로 \n 서로의 속마음을 알아보아요"
         android:textColor="#000000"
         android:textSize="18sp"
-        tools:layout_editor_absoluteX="74dp"
-        tools:layout_editor_absoluteY="377dp" />
+        android:layout_marginRight="20sp"
+        android:layout_marginLeft="120dp"
+        android:layout_marginTop="50dp"/>
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+</LinearLayout>

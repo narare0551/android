@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@drawable/backgroundmoon"
+    android:backgroundTint="#99FFFFFF"
+    android:backgroundTintMode="src_over"
+    android:text="어제질문">
+
+    <TextView
+        android:id="@+id/textView5"
+        android:layout_width="match_parent"
+        android:layout_height="109dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="150dp"
+        android:text="어제질문 ex)\n\n 어릴적 제일 \n좋아하던 놀이는 무엇이었나요 "
+        android:textAlignment="center"
+        android:textSize="20sp"
+
+
+        />
+
+    <FrameLayout
+        android:layout_width="252dp"
+        android:layout_height="284dp"
+        android:layout_gravity="center"
+        android:layout_margin="30sp"
+        android:background="@drawable/woodframe"
+        android:backgroundTint="#99FFFFFF"
+        android:backgroundTintMode="src_over"
+
+
+        >
+
+
+        <ImageView
+            android:id="@+id/imganswer"
+            android:layout_width="181dp"
+            android:layout_height="213dp"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart"
+            android:src="@drawable/letterimg"/>
+
+        <TextView
+            android:id="@+id/audioanswer"
+            android:layout_width="424dp"
+            android:layout_height="295dp"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:scaleType="fitStart" />
+
+        <TextView
+            android:id="@+id/letteranswer"
+            android:layout_width="424dp"
+            android:layout_height="295dp"
+            android:layout_alignParentLeft="true"
+            android:layout_gravity="center"
+            android:adjustViewBounds="true"
+            android:text="textanswer" />
+
+
+    </FrameLayout>
+
+    <TextView
+        android:id="@+id/textView6"
+        android:layout_width="97dp"
+        android:layout_height="41dp"
+        android:layout_gravity="center"
+        android:text="사라지기 10시간 3분 전 "
+        android:textAlignment="center" />
+</LinearLayout>

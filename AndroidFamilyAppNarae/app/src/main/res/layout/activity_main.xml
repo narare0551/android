@@ -7,7 +7,7 @@
     android:background="@drawable/backgroundflower"
     android:orientation="vertical"
 
-    tools:context=".MainActivity">
+  >
 
     <TextView
         android:id="@+id/textView3"
