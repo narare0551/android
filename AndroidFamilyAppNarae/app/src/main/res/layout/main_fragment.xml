@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/backgroundmoon"
+    android:backgroundTint="#99FFFFFF"
+    android:backgroundTintMode="src_over"
+    android:orientation="vertical">
+
+    <TextView
+        android:id="@+id/questionparent"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오늘의 질문  ex) 엄마아빠는 어떻게 처음 만났어요?"
+        android:textColor="#0B0A0A"
+        android:textSize="18sp"
+        android:layout_marginTop="150dp"
+        android:layout_gravity="center"/>
+
+    <TextView
+        android:id="@+id/questionchild"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="오늘의 질문  ex) 엄마아빠는 어떻게 처음 만났어요?"
+        android:layout_marginTop="100dp"
+        android:layout_gravity="center"
+        android:textColor="#0B0A0A"
+        android:textSize="18sp" />
+
+    <Button
+        android:id="@+id/button9"
+        android:layout_width="104dp"
+        android:layout_height="58dp"
+        android:layout_marginTop="150dp"
+        android:text="어제 질문 답보기 "
+        android:layout_gravity="center"
+        />
+
+    <Button
+        android:id="@+id/button8"
+        android:layout_width="104dp"
+        android:layout_height="57dp"
+        android:text="오늘 질문에 답하기 "
+        android:layout_gravity="center"
+        android:layout_marginTop="50dp"/>
+</LinearLayout>

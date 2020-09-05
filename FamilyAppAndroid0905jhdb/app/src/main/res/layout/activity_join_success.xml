@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".JoinSuccessActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:textSize="20dp"
+        android:text="회원가입 완료됨 축하함. 가족에게 코드번호 알려주고 회원가입시 입력하라하셈." />
+
+    <TextView
+        android:id="@+id/joinsuccess_tv_fcode"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textColor="#FF0000"
+        android:textSize="25dp"
+        android:text="가입할때 입력한 코드번호 출력" />
+
+    <Button
+        android:id="@+id/joinsuccess_btn_logingo"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="로그인 하러가기" />
+</LinearLayout>

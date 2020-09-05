@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ChoiceAnswerActivity">
+
+    <Button
+        android:id="@+id/choiceanswer_btn_postgo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/backgroundflower"
+        android:text="편지로 답 가기" />
+
+    <Button
+        android:id="@+id/choiceanswer_btn_camerago"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/backgroundmoon"
+        android:text="사진으로 답 가기" />
+
+    <Button
+        android:id="@+id/choiceanswer_btn_audiogo"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:background="@drawable/backgroundpost"
+        android:text="오디오로 답 가기" />
+</LinearLayout>
